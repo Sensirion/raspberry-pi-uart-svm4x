@@ -11,8 +11,7 @@ Raspberry Pi using the provided code.
 
 Plug the provided USB cable into your Raspberry Pi.
 
-If you don't have a suitable cable at hand, please find the SEK-SVM41 pinout listed below, or in
-the [technical documentation](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9_Gas_Sensors/Sensirion_Gas_Sensors_SEK-SVM41_Technical_Description_D1.pdf):
+If you don't have a suitable cable at hand, please find the SEK-SVM4x technical description [here](https://www.sensirion.com/my-sgp-ek):
 
 | *Pin* | *Cable Color* | *Name* | *Description* | *Comments* |
 |-------|---------------|--------|---------------|------------|
