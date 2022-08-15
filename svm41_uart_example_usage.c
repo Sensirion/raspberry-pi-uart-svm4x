@@ -29,6 +29,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#ifndef SENSIRION_UART_TTYDEV
+// For connection over USB.
+// Check the USB number in case you have other devices connected
+#define SENSIRION_UART_TTYDEV "/dev/ttyUSB0"
+// For connection over UART Pins
+// #define SENSIRION_UART_TTYDEV "/dev/serial0"
+#endif
+
 #include <stdio.h>  // printf
 
 #include "sensirion_common.h"
@@ -44,7 +52,7 @@
 int main(void) {
     int16_t error = 0;
 
-    error = sensirion_uart_hal_init();
+    error = sensirion_uart_hal_init(SENSIRION_UART_TTYDEV);
     if (error) {
         printf("Error initializing UART: %i\n", error);
         return error;

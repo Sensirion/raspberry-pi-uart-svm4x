@@ -44,10 +44,6 @@
  * http://www.raspberry-projects.com/pi/programming-in-c/uart-serial-port/using-the-uart
  */
 
-#ifndef SENSIRION_UART_TTYDEV
-#define SENSIRION_UART_TTYDEV "/dev/ttyUSB0"
-#endif
-
 static int uart_fd = -1;
 
 /**
@@ -61,7 +57,7 @@ int16_t sensirion_uart_hal_select_port(uint8_t port) {
     return 0;
 }
 
-int16_t sensirion_uart_hal_init() {
+int16_t sensirion_uart_hal_init(char* device_descr) {
     /*
      * The flags (defined in fcntl.h):
      * Access modes (use 1 of these):
@@ -77,7 +73,7 @@ int16_t sensirion_uart_hal_init() {
      *      shall not cause the terminal device to become the controlling
      *      terminal for the process.
      */
-    uart_fd = open(SENSIRION_UART_TTYDEV, O_RDWR | O_NOCTTY);
+    uart_fd = open(device_descr, O_RDWR | O_NOCTTY);
     if (uart_fd == -1) {
         fprintf(stderr, "Error opening UART. Ensure it's not otherwise used\n");
         return -1;
