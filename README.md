@@ -46,11 +46,13 @@ Use the following pins to connect your SVM41 to your Raspberry Pi:
 - Connect the SVM41 sensor as explained in the [section above](#connect-the-sensor)
 - Download the SVM41 driver from [Github](https://github.com/Sensirion/raspberry-pi-uart-svm41) and extract the `.zip`
   on your Raspberry Pi
-
     - Compile the driver
         1. Open a [terminal](https://projects.raspberrypi.org/en/projects/raspberry-pi-using/8)
         2. Navigate to the driver directory. E.g. `cd ~/raspberry-pi-uart-svm41`
-        3. Run the `make` command to compile the driver
+        3. Check that the correct serial port is set in the define in `svm41_uart_example_usage.c`
+           1. For connection over USB use (in case you have other devices connected check the USB number) `#define SENSIRION_UART_TTYDEV "/dev/ttyUSB0"`
+           2. For connection over UART Pins use `#define SENSIRION_UART_TTYDEV "/dev/serial0"`
+        4. Run the `make` command to compile the driver
 
            Output:
            ```

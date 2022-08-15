@@ -52,12 +52,13 @@ int16_t sensirion_uart_hal_select_port(uint8_t port);
  *
  * Return:      0 on success, an error code otherwise
  */
-int16_t sensirion_uart_hal_init();
+int16_t sensirion_uart_hal_init(char* device_descr);
 
 /**
  * sensirion_uart_hal_free() - release UART resources
  *
- * Return:      0 on success, an error code otherwise
+ * @device_descr: device descriptor of serial port to use, e.g. /dev/ttyUSB0
+ * Return:        0 on success, an error code otherwise
  */
 int16_t sensirion_uart_hal_free();
 
