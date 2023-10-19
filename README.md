@@ -10,9 +10,6 @@ Click [here](https://www.sensirion.com/my-sgp-ek/) to learn more about the Sensi
 The SVM4x evaluation kit covers evaluation of the SGP40 and SGP41 sensors.
 
 
-
-
-
 ## Connect the sensor
 
 <details><summary>Connecting the Sensor over USB</summary>
