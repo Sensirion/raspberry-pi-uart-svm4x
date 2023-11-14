@@ -97,15 +97,15 @@ int main(void) {
     printf("hardware_minor: %u ", hardware_minor);
     printf("protocol_major: %u ", protocol_major);
     printf("protocol_minor: %u\n", protocol_minor);
-    float arg_0 = 0.0;
-    error = svm4x_get_temperature_offset_for_rht_measurements(&arg_0);
+    float t_offset = 0.0;
+    error = svm4x_get_temperature_offset_for_rht_measurements(&t_offset);
     if (error != NO_ERROR) {
         printf("error executing get_temperature_offset_for_rht_measurements(): "
                "%i\n",
                error);
         return error;
     }
-    printf("arg_0: %.2f\n", arg_0);
+    printf("t_offset: %.2f\n", t_offset);
     error = svm4x_set_temperature_offset_for_rht_measurements(0);
     if (error != NO_ERROR) {
         printf("error executing set_temperature_offset_for_rht_measurements(): "
