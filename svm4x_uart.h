@@ -77,7 +77,7 @@ typedef enum {
  *
  * @return Compensated ambient temperature in degrees celsius.
  */
-float signal_temperature(int16_t temperature_raw);
+float svm4x_signal_temperature(int16_t temperature_raw);
 
 /**
  * @brief signal_humidity
@@ -86,7 +86,7 @@ float signal_temperature(int16_t temperature_raw);
  *
  * @return Compensated ambient humidity in %RH.
  */
-float signal_humidity(int16_t humidity_raw);
+float svm4x_signal_humidity(int16_t humidity_raw);
 
 /**
  * @brief signal_voc_index
@@ -95,7 +95,7 @@ float signal_humidity(int16_t humidity_raw);
  *
  * @return VOC Index
  */
-float signal_voc_index(int16_t voc_index_raw);
+float svm4x_signal_voc_index(int16_t voc_index_raw);
 
 /**
  * @brief signal_nox_index
@@ -104,7 +104,7 @@ float signal_voc_index(int16_t voc_index_raw);
  *
  * @return NOx Index
  */
-float signal_nox_index(int16_t nox_index_raw);
+float svm4x_signal_nox_index(int16_t nox_index_raw);
 
 /**
  * @brief Read measurement data and apply scaling.

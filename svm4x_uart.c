@@ -45,25 +45,25 @@
 
 static uint8_t communication_buffer[76] = {0};
 
-float signal_temperature(int16_t temperature_raw) {
+float svm4x_signal_temperature(int16_t temperature_raw) {
     float temperature = 0.0;
     temperature = temperature_raw / 200.0;
     return temperature;
 }
 
-float signal_humidity(int16_t humidity_raw) {
+float svm4x_signal_humidity(int16_t humidity_raw) {
     float humidity = 0.0;
     humidity = humidity_raw / 100.0;
     return humidity;
 }
 
-float signal_voc_index(int16_t voc_index_raw) {
+float svm4x_signal_voc_index(int16_t voc_index_raw) {
     float voc_index = 0.0;
     voc_index = voc_index_raw / 10.0;
     return voc_index;
 }
 
-float signal_nox_index(int16_t nox_index_raw) {
+float svm4x_signal_nox_index(int16_t nox_index_raw) {
     float nox_index = 0.0;
     nox_index = nox_index_raw / 10.0;
     return nox_index;
@@ -81,10 +81,10 @@ int16_t svm4x_read_measured_values(float* a_humidity, float* a_temperature,
     if (local_error != NO_ERROR) {
         return local_error;
     }
-    *a_humidity = signal_humidity(humidity_raw);
-    *a_temperature = signal_temperature(temp_raw);
-    *a_voc_index = signal_voc_index(voc_idx_raw);
-    *a_nox_index = signal_nox_index(nox_idx_raw);
+    *a_humidity = svm4x_signal_humidity(humidity_raw);
+    *a_temperature = svm4x_signal_temperature(temp_raw);
+    *a_voc_index = svm4x_signal_voc_index(voc_idx_raw);
+    *a_nox_index = svm4x_signal_nox_index(nox_idx_raw);
     return local_error;
 }
 
