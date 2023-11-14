@@ -1,10 +1,10 @@
 # Sensirion Raspberry Pi UART SVM4X Driver
 
-The repository provides a driver for setting up a SVM4X sensor to run on a Raspberry Pi over UART using the SHDLC protocol. 
+The repository provides a driver for setting up a SVM4X evaluation kit to run on a Raspberry Pi over UART using the SHDLC protocol. 
 
 <img src="images/svm4x.png" width="300px">
 
-Click [here](https://www.sensirion.com/my-sgp-ek/) to learn more about the Sensirion SVM4X sensor.
+Click [here](https://www.sensirion.com/my-sgp-ek/) to learn more about the Sensirion SVM4X evaluation kit.
 
 
 The SVM4x evaluation kit covers evaluation of the SGP40 and SGP41 sensors.
