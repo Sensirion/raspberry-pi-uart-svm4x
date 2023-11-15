@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+#### CHANGED
+
+- svm41_uart.h/c changed to svm4x_uart.h/c and method prefix changed also from svm41_ to svm4x_
+
 ## [0.2.0] - 2022-08-15
 
 - Change interface for `sensirion_uart_hal_init` in `sensirion_uart_hal` to allow passing
@@ -21,5 +27,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release
 
+[unreleased]: https://github.com/Sensirion/raspberry-pi-uart-svm41/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/Sensirion/raspberry-pi-uart-svm41/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/Sensirion/raspberry-pi-uart-svm41/releases/tag/0.1.0
-

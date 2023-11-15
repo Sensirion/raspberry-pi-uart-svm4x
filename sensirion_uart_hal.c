@@ -46,18 +46,7 @@
 
 static int uart_fd = -1;
 
-/**
- * sensirion_uart_hal_select_port() - select the UART port index to use
- *                                THE IMPLEMENTATION IS OPTIONAL ON SINGLE-PORT
- *                                SETUPS (only one SPS30)
- *
- * Return:      0 on success, an error code otherwise
- */
-int16_t sensirion_uart_hal_select_port(uint8_t port) {
-    return 0;
-}
-
-int16_t sensirion_uart_hal_init(char* device_descr) {
+int16_t sensirion_uart_hal_init(UartDescr port) {
     /*
      * The flags (defined in fcntl.h):
      * Access modes (use 1 of these):
@@ -73,7 +62,7 @@ int16_t sensirion_uart_hal_init(char* device_descr) {
      *      shall not cause the terminal device to become the controlling
      *      terminal for the process.
      */
-    uart_fd = open(device_descr, O_RDWR | O_NOCTTY);
+    uart_fd = open(port, O_RDWR | O_NOCTTY);
     if (uart_fd == -1) {
         fprintf(stderr, "Error opening UART. Ensure it's not otherwise used\n");
         return -1;
